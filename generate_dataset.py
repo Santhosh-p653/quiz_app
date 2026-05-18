@@ -8,7 +8,7 @@ import json
 import shutil
 import glob
 
-from icrawler.builtin import GoogleImageCrawler
+from icrawler.builtin import BingImageCrawler
 
 IMAGES_DIR   = "dataset/images"
 ANSWERS_PATH = "dataset/answers.json"
@@ -46,7 +46,7 @@ def download_images() -> dict:
 
         print(f"[{counter}/{len(CELEBRITIES)}] Downloading: {name}")
         try:
-            crawler = GoogleImageCrawler(storage={"root_dir": scratch})
+            crawler = BingImageCrawler(storage={"root_dir": scratch})
             crawler.crawl(
                 keyword=query,
                 max_num=IMAGES_PER_PERSON,

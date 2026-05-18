@@ -15,7 +15,7 @@ COPY app.py .
 COPY generate_dataset.py .
 
 RUN mkdir -p dataset/images temp
-
+RUN python generate_dataset.py
 RUN mkdir -p /root/.streamlit && printf "\
 [general]\nemail = \"\"\n\n\
 [server]\nheadless = true\nenableCORS = false\nenableXsrfProtection = false\n\n\
